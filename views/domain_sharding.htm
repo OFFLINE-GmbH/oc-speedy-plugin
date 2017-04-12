@@ -1,0 +1,7 @@
+<IfModule mod_headers.c>
+    ## To enable proper Cross domain requests we need
+    ## to set the proper headers
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css)$">
+    Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>

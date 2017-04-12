@@ -1,0 +1,32 @@
+<?php return [
+    'plugin'   => [
+        'name'                       => 'Speedy',
+        'description'                => 'Beschleunige Deine Website',
+        'author'                     => 'OFFLINE GmbH',
+        'manage_settings'            => 'Speedy-Einstellungen verwalten',
+        'manage_settings_permission' => 'Darf Speedy-Einstellungen verwalten',
+    ],
+    'settings' => [
+        'quick_hacks'                             => 'Einfache Korrekturen',
+        'quick_hacks_comment'                     => 'Diese Korrekturen benötigen keine weiteren Anpassungen an deinem Server.',
+        'enable_http2'                            => 'Aktiviere HTTP/2-Preloading',
+        'enable_http2_comment'                    => 'Link-Header mit Preload-Anweisungen für Bilder, CSS- und JS-Dateien werden für jeden Seitenaufruf generiert. Dein Server muss das HTTP/2-Protokoll unterstützen.',
+        'enable_caching'                          => 'Aktiviere Caching',
+        'enable_caching_comment'                  => 'Fügt Expires HTTP-Header für Bilder, Schriften und CSS-/JS-Dateien hinzu (Achtung: Verwende diese Einstellung erst in der Produktivumgebung um Caching-Probleme beim Entwickeln zu vermeiden)',
+        'enable_domain_sharding'                  => 'Aktiviere Domain sharding',
+        'enable_domain_sharding_comment'          => 'Die Basis-URL für alle Links in deinen Theme-Ordner werden auf eine andere URL umgeschrieben.',
+        'enable_domain_sharding_in_debug'         => 'Sharding auch bei eingeschaltetem Debug-Modus aktivieren',
+        'enable_domain_sharding_in_debug_comment' => 'Standardmässig wird das Domain sharding nur aktiv, wenn du den Debug-Modus ausschaltest.',
+        'domain_sharding_cdn_domain'              => 'Alternative Domain',
+        'domain_sharding_cdn_domain_comment'      => 'Alle Dateien werden von dieser URL geladen. Beachte die Infobox auf der rechten Seite.',
+        'enable_gzip'                             => 'Aktiviere Gzip',
+        'enable_gzip_comment'                     => 'Dateien werden mit Gzip komprimiert bevor sie an den Client gesendet werden. Apache mod_gzip wird benötigt.',
+        'domain_sharding_section'                 => 'Domain sharding',
+        'domain_sharding_section_comment'         => 'Lade deine Website-Daten von einer weiteren Domain. Diese Option ist überflüssig, wenn du bereits HTTP/2 verwendest.',
+    ],
+    'sharding' => [
+        'info_heading'    => 'Nötige Schritte um das Domain sharding zu verwenden',
+        'info_subheading' => 'Führe diese Schritte aus, bevor du die Option aktivierst!',
+        'info_text'       => 'Stelle sicher, dass deine Website unter der alternativen Domain erreichbar ist. Dies kannst du z. B. tun, in dem du einen CNAME-Eintrag für cdn.deinewebsite.com mit dem Ziel www.deinewebsite.com erstellst. Alternativ kannst du bei deinem Hoster auch eine Subdomain auf den gleichen Zeilordner einrichten.',
+    ],
+];

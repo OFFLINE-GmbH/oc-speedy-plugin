@@ -1,0 +1,57 @@
+fields:
+    quick_hacks:
+        label: offline.speedy::lang.settings.quick_hacks
+        comment: offline.speedy::lang.settings.quick_hacks_comment
+        type: section
+
+    enable_http2:
+        span: left
+        type: switch
+        label: offline.speedy::lang.settings.enable_http2
+        comment: offline.speedy::lang.settings.enable_http2_comment
+        default: false
+
+    enable_gzip:
+        span: left
+        type: switch
+        label: offline.speedy::lang.settings.enable_gzip
+        comment: offline.speedy::lang.settings.enable_gzip_comment
+        default: false
+
+    enable_caching:
+        span: left
+        type: switch
+        label: offline.speedy::lang.settings.enable_caching
+        comment: offline.speedy::lang.settings.enable_caching_comment
+        default: false
+
+    domain_sharding_section:
+        label: offline.speedy::lang.settings.domain_sharding_section
+        comment: offline.speedy::lang.settings.domain_sharding_section_comment
+        type: section
+
+    enable_domain_sharding:
+        span: left
+        type: switch
+        label: offline.speedy::lang.settings.enable_domain_sharding
+        comment: offline.speedy::lang.settings.enable_domain_sharding_comment
+        default: false
+
+    enable_domain_sharding_in_debug:
+        span: right
+        type: switch
+        label: offline.speedy::lang.settings.enable_domain_sharding_in_debug
+        comment: offline.speedy::lang.settings.enable_domain_sharding_in_debug_comment
+        default: false
+
+    domain_sharding_warning:
+        type: partial
+        span: right
+        path: $/offline/speedy/models/settings/_sharding_warning.htm
+
+    domain_sharding_cdn:
+        type: text
+        label: offline.speedy::lang.settings.domain_sharding_cdn_domain
+        comment: offline.speedy::lang.settings.domain_sharding_cdn_domain_comment
+        span: left
+        default: http://cdn.yourwebsite.com

@@ -1,0 +1,32 @@
+<?php return [
+    'plugin'   => [
+        'name'                       => 'Speedy',
+        'description'                => 'Speed up your website',
+        'author'                     => 'OFFLINE LLC',
+        'manage_settings'            => 'Manage Speedy settings',
+        'manage_settings_permission' => 'Can manage Speedy settings',
+    ],
+    'settings' => [
+        'quick_hacks'                             => 'Simple fixes',
+        'quick_hacks_comment'                     => 'These simple fixes can be enabled without further configuration of your server',
+        'enable_http2'                            => 'Enable HTTP/2 preloading',
+        'enable_http2_comment'                    => 'Link headers to preload images, CSS and JS files are generated for every request. Requires an HTTP/2 enabled server.',
+        'enable_caching'                          => 'Enable caching',
+        'enable_caching_comment'                  => 'Adds expires headers for images, fonts, CSS and JS files. (Caution: Enable this setting only in production environments to prevent caching issues while developing)',
+        'enable_domain_sharding'                  => 'Enable domain sharding',
+        'enable_domain_sharding_comment'          => 'The base URL for all links to your theme folder will be rewritten to another URL.',
+        'enable_domain_sharding_in_debug'         => 'Enable sharding while debug mode is enabled',
+        'enable_domain_sharding_in_debug_comment' => 'By default domain sharding will only be active while the debug mode is turned off.',
+        'domain_sharding_cdn_domain'              => 'Alternative domain',
+        'domain_sharding_cdn_domain_comment'      => 'All files are loaded from this URL. Please see the box on the right side for more information.',
+        'enable_gzip'                             => 'Enable Gzip',
+        'enable_gzip_comment'                     => 'Files are compressed using Gzip. Apache mod_gzip has to be installed on your server.',
+        'domain_sharding_section'                 => 'Domain sharding',
+        'domain_sharding_section_comment'         => 'Load your files from an alternative domain. This option is redundant if you are already using HTTP/2.',
+    ],
+    'sharding' => [
+        'info_heading'    => 'Necessary steps to set up domain sharding',
+        'info_subheading' => 'Make sure to read this through before enabling the setting!',
+        'info_text'       => 'Make sure your website is reachable via the alternative domain. You can do this by creating a CNAME record for cdn.example.com that points to www.example.com. Alternatively you can create a subdomain that points to the same root folder as your main domain.',
+    ],
+];
