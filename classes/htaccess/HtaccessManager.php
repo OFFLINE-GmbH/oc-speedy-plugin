@@ -10,7 +10,7 @@ class HtaccessManager
 
     public function __construct(HtaccessWriter $manager = null)
     {
-        $this->manager = $manager ?? new HtaccessWriter();
+        $this->manager = $manager ?: new HtaccessWriter();
     }
 
     public function toggleSection($section, $status)
