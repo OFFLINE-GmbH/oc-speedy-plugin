@@ -66,7 +66,7 @@ class HtaccessWriter
     {
         $append   = [];
         $append[] = "## START OFFLINE.Speedy - ${section}";
-        $append[] = "#  DO NOT REMOVE THESE LINES";
+        $append[] = '#  DO NOT REMOVE THESE LINES';
         $append[] = $contents;
         $append[] = "## END OFFLINE.Speedy - ${section}";
 

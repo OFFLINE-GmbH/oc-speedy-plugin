@@ -56,15 +56,16 @@ class Http2Middleware
                         ->flatten(1)
                         ->map(function ($url) {
                             return $this->buildLinkHeaderString($url);
-                        })->filter()
+                        })
+                        ->filter()
                         ->implode(',');
+
         if ( ! empty(trim($headers))) {
             $this->addLinkHeader($response, $headers);
         }
 
         return $this;
     }
-
 
     /**
      * Get the DomCrawler instance.
@@ -140,12 +141,12 @@ class Http2Middleware
      *
      * @return bool
      */
-    protected function shouldHandle(Request $request, $response): bool
+    protected function shouldHandle(Request $request, $response)
     {
         return
             (bool)Settings::get('enable_http2', true) === true
-            && ! $response->isRedirection()
             && $response instanceof Response
+            && ! $response->isRedirection()
             && ! $request->isJson();
     }
 }

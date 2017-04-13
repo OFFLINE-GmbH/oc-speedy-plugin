@@ -58,10 +58,7 @@ class CDNMiddleware
         return $response;
     }
 
-    /**
-     * @return bool
-     */
-    protected function disableBecauseInDebug(): bool
+    protected function disableBecauseInDebug()
     {
         if ( ! config('app.debug')) {
             return false;
@@ -70,10 +67,7 @@ class CDNMiddleware
         return (bool)Settings::get('enable_domain_sharding_in_debug', false) !== true;
     }
 
-    /**
-     * @return bool
-     */
-    protected function isDisabled(): bool
+    protected function isDisabled()
     {
         return (bool)Settings::get('enable_domain_sharding', false) !== true;
     }
