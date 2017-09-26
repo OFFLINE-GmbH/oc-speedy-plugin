@@ -1,5 +1,5 @@
 {
     "require": {
-        "symfony/dom-crawler": "^3.3"
+        "symfony/dom-crawler": "~2.7|~3.0"
     }
 }
