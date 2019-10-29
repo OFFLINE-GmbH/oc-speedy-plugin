@@ -3,3 +3,4 @@
 1.0.3: Added russian translations (thanks to pavalx-ru)
 1.0.4: Added french translations (thanks to damsfx)
 1.0.5: Added pt-pt translations (thanks to João Costa)
+1.0.6: Switched to mod_deflate for gzip compression. Disable gzip compression in the Speedy settings and turn it back on to apply these changes to your installation.
