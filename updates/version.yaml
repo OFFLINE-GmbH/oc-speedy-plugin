@@ -5,4 +5,5 @@
 1.0.5: Added pt-pt translations (thanks to João Costa)
 1.0.6: Switched to mod_deflate for gzip compression. Disable gzip compression in the Speedy settings and turn it back on to apply these changes to your installation.
 1.0.7: Increased Cache-Control header to a max-age value of 1 year for images, fonts and videos to be in line with Google's current recommendations. Disable and re-enable the caching option to benefit from these changes. (https://web.dev/uses-long-cache-ttl/)
+1.0.8: Optimized caching of woff2 fonts
 
