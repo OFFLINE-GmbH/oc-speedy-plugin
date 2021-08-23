@@ -1,5 +1,23 @@
 {
-    "require": {
-        "symfony/dom-crawler": "~2.7|~3.0"
+  "name": "offline/oc-speedy-plugin",
+  "type": "october-plugin",
+  "description": "Speed up your October CMS installation",
+  "keywords": [
+    "october",
+    "cms",
+    "speed",
+    "optimization",
+    "seo"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tobias Kündig",
+      "email": "tobias@offline.ch"
     }
+  ],
+  "require": {
+    "composer/installers": "~1.0",
+    "symfony/dom-crawler": "~2.7|~3.0"
+  }
 }
