@@ -16,6 +16,28 @@ Speedy currently only works with the Apache web server with enabled `htaccess` f
 
 Speedy makes use of `mod_expires`, `mod_gzip` and `mod_headers`.
 
+##  Console commands
+
+There are a number of console commands to enable optimizations.
+
+**Enable HTTP/2 preloading:**
+
+```bash
+php artisan speedy:enable-http2
+```
+
+**Enable Gzip:**
+
+```bash
+php artisan speedy:enable-gzip
+```
+
+**Enable Caching:**
+
+```bash
+php artisan speedy:enable-caching
+```
+
 ## Attributions
 
 The speedy flash icon was created by [SagarUnagar](https://www.iconfinder.com/SagarUnagar) and is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). Speedy uses a modified version of [JacobBennett's laravel-HTTP2ServerPush](https://github.com/JacobBennett/laravel-HTTP2ServerPush) middleware which is licensed under the [MIT license](https://github.com/JacobBennett/laravel-HTTP2ServerPush/blob/master/LICENSE.md).
