@@ -4,6 +4,7 @@ use Illuminate\Contracts\Http\Kernel;
 use OFFLINE\Speedy\Classes\Middleware\CDNMiddleware;
 use OFFLINE\Speedy\Classes\Middleware\Http2Middleware;
 use System\Classes\PluginBase;
+use Offline\Speedy\Console;
 
 /**
  * Speedy Plugin Information File
@@ -28,9 +29,10 @@ class Plugin extends PluginBase
 
     public function register()
     {
-        $this->registerConsoleCommand('speedy:enable-caching', \Offline\Speedy\Console\EnableCachingCommand::class);
-        $this->registerConsoleCommand('speedy:enable-gzip', \Offline\Speedy\Console\EnableGzipCommand::class);
-        $this->registerConsoleCommand('speedy:enable-http2', \Offline\Speedy\Console\EnableHttp2Command::class);
+        $this->registerConsoleCommand('speedy:toggle-caching', Console\ToggleCachingCommand::class);
+        $this->registerConsoleCommand('speedy:toggle-gzip', Console\ToggleGzipCommand::class);
+        $this->registerConsoleCommand('speedy:toggle-http-2', Console\ToggleHttp2Command::class);
+        $this->registerConsoleCommand('speedy:status', Console\StatusCommand::class);
     }
 
     public function boot()
