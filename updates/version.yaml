@@ -7,4 +7,5 @@
 1.0.7: Increased Cache-Control header to a max-age value of 1 year for images, fonts and videos to be in line with Google's current recommendations. Disable and re-enable the caching option to benefit from these changes. (https://web.dev/uses-long-cache-ttl/)
 1.0.8: Optimized caching of woff2 fonts
 1.0.9: Added Composer installation support
+1.0.10: "Added console commands to enable optimizations (thanks to @guus-frenken)"
 
