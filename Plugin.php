@@ -26,6 +26,13 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function register()
+    {
+        $this->registerConsoleCommand('speedy:enable-caching', \Offline\Speedy\Console\EnableCachingCommand::class);
+        $this->registerConsoleCommand('speedy:enable-gzip', \Offline\Speedy\Console\EnableGzipCommand::class);
+        $this->registerConsoleCommand('speedy:enable-http2', \Offline\Speedy\Console\EnableHttp2Command::class);
+    }
+
     public function boot()
     {
         $this->app[Kernel::class]->pushMiddleware(Http2Middleware::class);
