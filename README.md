@@ -18,25 +18,33 @@ Speedy makes use of `mod_expires`, `mod_gzip` and `mod_headers`.
 
 ##  Console commands
 
-There are a number of console commands to enable optimizations.
-
-**Enable HTTP/2 preloading:**
+You can get your current Speedy settings with the following command:
 
 ```bash
-php artisan speedy:enable-http2
+php artisan speedy:status
 ```
 
-**Enable Gzip:**
+There are also a number of console commands to toggle optimizations.
+
+**Toggle HTTP/2 preloading:**
 
 ```bash
-php artisan speedy:enable-gzip
+php artisan speedy:toggle-http2
 ```
 
-**Enable Caching:**
+**Toggle Gzip:**
 
 ```bash
-php artisan speedy:enable-caching
+php artisan speedy:toggle-gzip
 ```
+
+**Toggle Caching:**
+
+```bash
+php artisan speedy:toggle-caching
+```
+
+You can also choose to try to enable to disable an option by adding the `--enable` or `--disable` option respectively to any of the toggle commands. If the option is already enabled / disabled, no changes will be made.
 
 ## Attributions
 
