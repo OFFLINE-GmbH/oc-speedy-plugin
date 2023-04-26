@@ -9,4 +9,5 @@
 1.0.9: Added Composer installation support
 1.0.10: "Added console commands to enable optimizations (thanks to @guus-frenken)"
 1.0.11: "Modified console commands to toggle optimizations (thanks to @guus-frenken)"
+1.0.12: "Fixed compatibility issue in CDNMiddleware with newer Laravel versions"
 

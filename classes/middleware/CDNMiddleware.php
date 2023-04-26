@@ -15,13 +15,12 @@ class CDNMiddleware
     protected $themePath;
     protected $cdnUrl;
 
-    public function __construct(UrlGenerator $urlGenerator)
+    public function __construct()
     {
         $themeDir  = Theme::getActiveTheme()->getDirName();
         $themePath = Config::get('cms.themesPath', '/themes') . '/' . $themeDir;
 
-        $this->urlGenerator = $urlGenerator;
-        $this->baseUrl      = $this->urlGenerator->to('/');
+        $this->baseUrl      = url()->to('/');
 
         $this->cdnUrl    = trim(Settings::get('domain_sharding_cdn', ''), '/');
         $this->themePath = trim($themePath, '/');
