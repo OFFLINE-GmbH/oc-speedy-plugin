@@ -6,31 +6,15 @@ use Closure;
 use Cms\Classes\Theme;
 use Config;
 use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
 use OFFLINE\Speedy\Models\Settings;
 
 class CDNMiddleware
 {
-    protected $urlGenerator;
-    protected $themePath;
-    protected $cdnUrl;
-
-    public function __construct()
-    {
-        $themeDir  = Theme::getActiveTheme()->getDirName();
-        $themePath = Config::get('cms.themesPath', '/themes') . '/' . $themeDir;
-
-        $this->baseUrl      = url()->to('/');
-
-        $this->cdnUrl    = trim(Settings::get('domain_sharding_cdn', ''), '/');
-        $this->themePath = trim($themePath, '/');
-    }
-
     /**
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \Closure                 $next
+     * @param \Closure $next
      *
      * @return mixed
      */
@@ -42,10 +26,23 @@ class CDNMiddleware
             return $response;
         }
 
+        $theme = Theme::getActiveTheme();
+        if (!$theme) {
+            return $response;
+        }
+
+        $themeDir = $theme->getDirName();
+        $themePath = Config::get('cms.themesPath', '/themes') . '/' . $themeDir;
+
+        $baseUrl = url()->to('/');
+
+        $cdnUrl = trim(Settings::get('domain_sharding_cdn', ''), '/');
+        $themePath = trim($themePath, '/');
+
         $contents = $response->getContent();
 
         $replacements = [
-            $this->baseUrl . '/' . $this->themePath => $this->cdnUrl . '/' . $this->themePath,
+            $baseUrl . '/' . $themePath => $cdnUrl . '/' . $themePath,
         ];
 
         foreach ($replacements as $from => $to) {
@@ -59,7 +56,7 @@ class CDNMiddleware
 
     protected function disableBecauseInDebug()
     {
-        if ( ! config('app.debug')) {
+        if (!config('app.debug')) {
             return false;
         }
 
